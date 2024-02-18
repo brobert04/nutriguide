@@ -1,52 +1,5 @@
-<!doctype html>
-<html lang="en-us">
-
-<head>
-
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>NutriGuide</title>
-    <meta name="description" content="">
-
-    <!-- The compiled CSS file -->
-    <link rel="stylesheet" href="{{asset('../assets/css/production.css')}}">
-
-    <!-- Web fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Source+Serif+Pro:700" rel="stylesheet">
-
-    <!-- favicon.ico. Place these in the root directory. -->
-    <link rel="shortcut icon" href="favicon.ico">
-
-</head>
-
-<body class="has-animations">
-<!-- Header -->
-<header class="align--center pt3">
-    <div class="container--lg border--bottom pb3 ">
-        <img class="logo mb3 reveal-on-scroll is-revealing" src="{{asset('../assets//img/logo.svg')}}" alt="Carta">
-        <h1 class="mb2">A new perspective on what you eat.</h1>
-        @if(Route::has('login'))
-            @auth
-                <span>
-                <a href="{{route('dashboard')}}" class="link"><button class="btn btn--secondary">Dashboard</button></a>
-                </span>
-            @else
-        <span>
-                <a href="{{route('login')}}" class="link"><button class="btn btn--secondary">Login</button></a>
-            </span>
-        <span>
-                <a href="{{route('register')}}" class="link"><button class="btn btn--warning">Register</button></a>
-            </span>
-            @endauth
-        @endif
-    </div>
-</header>
-
-<main>
-
+@extends('nutriguide.home_view.base')
+@section('content')
     <!-- Feature list -->
     <div class="container pt3 mt2 text--gray align--center">
         <p class="mb3">Great for companies with up to 100&nbsp;employees.</p>
@@ -63,7 +16,7 @@
                 <img class="illustration--small mb1" src="{{asset('../assets/img/search.svg')}}" alt="Powerful search">
                 <p>Powerful search</p>
             </div>
-            <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
+            <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">a
                 <img class="illustration--small mb1" src="{{asset('../assets/img/vault.svg')}}" alt="Put in a vault">
                 <p>Put in a vault</p>
             </div>
@@ -118,52 +71,4 @@
         <p class="mb2">Mentioned in</p>
         <span class=""><img class="mentioned" src="{{asset('../assets/img/mentioned.svg')}}" alt="New York Times, TC, Product Hunt, Recode"></span>
     </div>
-
-    <!-- CTA -->
-    <div class="bg--dark-gray align--center pt3 pb3">
-        <div class="container pt2 pb2">
-            <img class="cta-image mb2 reveal-on-scroll is-revealing" src="{{asset('../assets/img/text.svg')}}" alt="Text the app">
-            <p class="h3 text--white mb1 bold">We'll text you the&nbsp;app</p>
-            <p class="text--white mb3">Just insert your number below. Messaging rates&nbsp;apply.</p>
-            <div class="inline-block mr1 no-mr-on-mobile" style="width: 280px; max-width:100%;">
-                <input class="form-control" type="tel" placeholder="Phone number">
-            </div>
-            <button class="btn btn--secondary">Send</button>
-        </div>
-    </div>
-
-</main>
-
-<!-- Footer -->
-<footer class="pt1 pb3 align--center-on-mobile">
-    <div class="container">
-        <div class="grid-row">
-            <div class="grid-column mt2 span-half">
-                <div class="mb1">
-                        <span>
-                            <a href="https://www.apple.com/ios/app-store/" class="link"><img class="download" src="/img/ios.png" alt="Download on the App Store"></a>
-                        </span>
-                    <span>
-                            <a href="https://play.google.com/store" class="link"><img class="download" src="/img/googleplay.png" alt="Download on Google Play"></a>
-                        </span>
-                </div>
-                <p class="small">Design by <a href="https://www.papayatemplates.com" class="link link--text">Papaya</a>. Illustrations from&nbsp;<a href="https://undraw.co/" class="link link--text">Undraw</a>.</p>
-            </div>
-            <div class="grid-column mt2 span-half align--right align--center-on-mobile">
-                <ul class="no-bullets list--inline">
-                    <li class="mr1"><a href="" class="link"><img class="icon" src="/img/youtube.svg" alt="YouTube"></a></li>
-                    <li class="mr1"><a href="" class="link"><img class="icon" src="/img/twitter.svg" alt="Twitter"></a></li>
-                    <li><a href="" class="link"><img class="icon" src="/img/facebook.svg" alt="Facebook"></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Scroll reveal -->
-<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-
-<!-- The compiled JavaScript file -->
-<script src="{{asset('../assets/js/production.js')}}"></script>
-
-</body>
-</html>
+@endsection
