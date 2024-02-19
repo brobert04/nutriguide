@@ -42,6 +42,12 @@ Route::middleware('auth')->group(function(){
     Route::get('/dashboard', [\App\Http\Controllers\User\DashboardController::class, 'index'])->name('dashboard');
     Route::get('/profile', [UserProfileController::class, 'index'])->name('profile');
 
+    Route::get('/product', [\App\Http\Controllers\User\ProductController::class, 'index'])->name('product.index');
+
+    Route::post('/product/scan', [\App\Http\Controllers\User\ProductController::class, 'scanBarcode'])->name('product.scan');
+
+    Route::get('/product/{barcode}', [\App\Http\Controllers\User\ProductController::class, 'product'])->name('product.show');
+
 });
 
 require __DIR__.'/auth.php';

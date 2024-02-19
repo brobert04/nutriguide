@@ -1,4 +1,14 @@
 @extends('nutriguide.users.dashboard.base')
 @section('content')
-    <h1>Hello</h1>
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Hello back, <small>{{auth()->user()->name}}</small>!</h1>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 @endsection
